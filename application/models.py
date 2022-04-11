@@ -3,6 +3,7 @@ from datetime import datetime
 
 class Hunter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True, nullable=False)
     name = db.Column(db.String(16), nullable=False)
     rank = db.Column(db.Integer, nullable=False)
     quests = db.relationship ('QuestLog', backref ='hunter')

@@ -14,7 +14,7 @@ def addhunter():
 
 
     if request.method == "POST":
-        hunters = Hunter(name=form.name.data, rank=form.rank.data)
+        hunters = Hunter(name=form.name.data, rank=form.rank.data, email=form.email.data)
 
         db.session.add(hunters)
         db.session.commit()
