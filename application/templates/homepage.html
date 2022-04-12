@@ -5,6 +5,7 @@
 <h2> Here are your Quests: </h2>
 
 {% for hunter in all_hunters %}
+
 <p>
 
 Hunter Name: {{hunter.name}}
@@ -12,8 +13,26 @@ Hunter Name: {{hunter.name}}
 Hunter Rank: {{hunter.rank}}
 <br>
 
+{% for questlog in all_quests %}
+{% if questlog.hunter_id == hunter.id %}
 
+<br>
+Hunter Quest Details:
+<br>
+Monster Hunted: {{questlog.monster}}
+<br>
+Weapon Used: {{questlog.weapon}}
+<br>
+Date Created: {{questlog.date_created}}
+<br>
+Completed: {{questlog.completed}}
+
+
+<br><br>
 </p>
+{% endif %}
+{% endfor %}
+
 {% endfor %}
 
 

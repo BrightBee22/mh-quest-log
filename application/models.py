@@ -2,13 +2,12 @@ from application import db
 from datetime import datetime
 
 class Hunter(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True) 
     name = db.Column(db.String(16), nullable=False)
     rank = db.Column(db.Integer, nullable=False)
-    quests = db.relationship ('QuestLog', backref ='hunter')
+    quests = db.relationship ('Questlog', backref ='hunter')
 
-class QuestLog(db.Model):
+class Questlog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     weapon = db.Column(db.String(16), nullable=False)
     monster = db.Column(db.String(40), nullable=False)
