@@ -25,8 +25,12 @@ Weapon Used: {{questlog.weapon}}
 <br>
 Date Created: {{questlog.date_created}}
 <br>
-Completed: {{questlog.completed}}
 
+{% if questlog.completed == False %}
+<a href = "{{ url_for('complete_task', completed=True, id=questlog.id) }}">Complete</a>
+{% else %}
+<a href = "{{ url_for('complete_task', completed=False, id=questlog.id) }}">Incomplete</a>
+{% endif %}
 
 <br><br>
 </p>

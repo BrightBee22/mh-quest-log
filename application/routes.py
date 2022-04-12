@@ -32,3 +32,14 @@ def addhunter():
         return redirect(url_for('home'))
 
     return render_template('addhunter.html', form=form)
+
+@app.route('/complete/<completed>/<int:id>')
+def complete_task(completed, id):
+    quest = Questlog.query.get(id)
+    if completed == 'True':
+        quest.completed = True
+        db.session.commit()
+    elif completed == 'False':
+        quest.completed = False
+        db.session.commit()
+    return redirect(url_for('home'))
