@@ -14,9 +14,8 @@ def home():
 def addhunter():
     form = HunterForm()
     
-
-
     if request.method == "POST":
+
         hunters = Hunter(name=form.name.data, rank=form.rank.data)
 
         db.session.add(hunters)
@@ -34,7 +33,7 @@ def addhunter():
     return render_template('addhunter.html', form=form)
 
 @app.route('/complete/<completed>/<int:id>')
-def complete_task(completed, id):
+def complete_hunt(completed, id):
     quest = Questlog.query.get(id)
     if completed == 'True':
         quest.completed = True
@@ -42,4 +41,13 @@ def complete_task(completed, id):
     elif completed == 'False':
         quest.completed = False
         db.session.commit()
+    return redirect(url_for('home'))
+
+@app.route('/delete/<int:id>')
+def delete_hunt(id):
+    quest = Questlog.query.get(id)
+    hunter = Hunter.query.get(id)
+    db.session.delete(quest)
+    db.session.delete(hunter)
+    db.session.commit()
     return redirect(url_for('home'))

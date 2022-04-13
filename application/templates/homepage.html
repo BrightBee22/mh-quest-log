@@ -27,10 +27,11 @@ Date Created: {{questlog.date_created}}
 <br>
 
 {% if questlog.completed == False %}
-<a href = "{{ url_for('complete_task', completed=True, id=questlog.id) }}">Complete</a>
+<a href = "{{ url_for('complete_hunt', completed=True, id=questlog.id) }}">Complete</a>
 {% else %}
-<a href = "{{ url_for('complete_task', completed=False, id=questlog.id) }}">Incomplete</a>
+<a href = "{{ url_for('complete_hunt', completed=False, id=questlog.id) }}">Incomplete</a>
 {% endif %}
+<a href = "{{ url_for('delete_hunt', id=questlog.id) }}">Delete</a>
 
 <br><br>
 </p>
