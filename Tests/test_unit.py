@@ -32,17 +32,11 @@ class TestBase(TestCase):
     def tearDown(self):
         db.drop_all()
 
-class TestAddQuest(TestBase):
+class TestViewQuest(TestBase):
     def test_view_page(self):
         response = self.client.get(url_for('addhunter'))
         self.assertEqual(response.status_code, 200)
 
-    def test_new_hunt(self):
-        response=self.client.post(url_for('addhunter'),
-        data = dict(name="Assasin", rank ="333", weapon="dagger", monster="dracula"),
-        follow_redirects=True)
-        self.assertEqual(response.status_code, 200)
-        assert Hunter.query.filter_by(name="Assasin").id == 3
     
 class TestDelete(TestBase):  
     def delete_hunt(self):
@@ -53,6 +47,13 @@ class TestDelete(TestBase):
 class TestUpdate(TestBase):
     def update_hunt(self):
         response = self.client.update(url_for('complete_hunt'))
+        self.assertEqual(response.status_code, 200)
+    
+class TestAddQuest(TestBase):
+    def test_new_hunt(self):
+        response=self.client.post(url_for('addhunter'),
+        data = dict(name="Assasin", rank ="333", weapon="dagger", monster="dracula"),
+        follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
 

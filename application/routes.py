@@ -10,6 +10,7 @@ def home():
     all_quests = Questlog.query.all()
     return render_template('homepage.html', all_hunters=all_hunters, all_quests=all_quests)
 
+
 @app.route('/addhunter', methods=['GET', 'POST'])
 def addhunter():
     form = HunterForm()
