@@ -20,8 +20,6 @@ def addhunter():
 
         db.session.add(hunters)
 
-        user = Hunter.query.filter_by(name=form.name.data, rank=form.rank.data).first()
-
         quests = Questlog(weapon=form.weapon.data, monster=form.monster.data, hunter=hunters)
 
         db.session.add(quests)
