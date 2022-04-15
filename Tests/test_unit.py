@@ -47,7 +47,7 @@ class TestDelete(TestBase):
 class TestUpdate(TestBase):
     def update_hunt(self):
         response = self.client.update(url_for('complete_hunt'))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
     
 class TestAddQuest(TestBase):
     def test_new_hunt(self):
