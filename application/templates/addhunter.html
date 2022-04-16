@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2> Add Your Hunter and Quest Details Here: </h2>
+
+<form method = "POST" action="">
+
+    {{ form.hidden_tag ()}}
+    {{form.name.label}}:{{form.name}}
+    {{form.rank.label}}:{{form.rank}}
+    {{form.weapon.label}}:{{form.weapon}}
+    {{form.monster.label}}:{{form.monster}}
+
+
+    {{form.submit}}
+
+</form>
+
+
+
+{% endblock body %}
