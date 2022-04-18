@@ -66,6 +66,9 @@ The CI pipeline for this project is project tracking from Trello and the work lo
 Pytest is used to run the unit tests on the application. They assert if a certain function is run, the output has a known value. The table below shows console outputs when Jenkins runs a pytest showing how many passed and how many failed (image below).
 ![pytest]
 
+Unit tests that were used for the project:
+![test]
+
 A coverage report can also be formed which Jenkins can archive as an artifact html document. Image for the coverage report of the project can be found below.
 ![pycov]
 
@@ -91,6 +94,7 @@ I have created an application that meets the required specifications of the proj
 [validapp]:https://i.imgur.com/y6rjISJ.png
 [pytest]:https://i.imgur.com/rKm5nzT.png
 [pycov]:https://i.imgur.com/3kI4P0i.png
+[test]:https://i.imgur.com/4f9hQNm.png
 
 ## Presentation <a name="presentation"></a>
 Link to presentation:
