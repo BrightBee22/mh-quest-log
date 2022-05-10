@@ -4,6 +4,7 @@ FROM python:3.6
 COPY . .
 #set up env variables
 ENV DATABASE_URI=sqlite:///data.db
+ENV SECRET_KEY=SECRET_KEY
 #expose ports
 EXPOSE 5000
 #install requirements
