@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-   flask-app:
+   MH-Quest-Log:
     image: bee/mh-quest-log:latest
     build: ./
     ports:
