@@ -1,7 +1,7 @@
 version: '3.8'
 services:
    MH-Quest-Log:
-    image: bee/mh-quest-log:latest
+    image: brightbee/mh-quest-log:latest
     build: ./
     ports:
     - target: 5000
